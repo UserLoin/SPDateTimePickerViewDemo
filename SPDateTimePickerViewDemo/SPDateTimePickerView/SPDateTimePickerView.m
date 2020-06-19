@@ -401,7 +401,9 @@
     selectedMinute   = minute;
     selectedSecond   = second;
     
-    
+    // 此行代码解决、切换模式时导致的数组越界问题
+    [self.pickerView reloadAllComponents];
+
     dayRange = [self isAllDay:year andMonth:month];
     
     switch (self.pickerViewMode) {
